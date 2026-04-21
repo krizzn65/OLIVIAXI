@@ -138,8 +138,9 @@ body::before {
 }
 
 .nav-links a:hover {
-  color: var(--text-main);
+  color: var(--primary-color);
   transform: scale(1.1);
+  text-shadow: 0 0 16px rgba(52, 211, 153, 0.7), 0 0 32px rgba(52, 211, 153, 0.4);
 }
 
 /* BUTTONS */
@@ -164,14 +165,14 @@ body::before {
 }
 
 .btn-icon {
-  background: white;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
+  display: inline-flex;
+  font-size: 20px;
+  color: #ffffff;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+.hero-cta:hover .btn-icon {
+  transform: translateX(4px) scale(1.05);
 }
 
 /* HERO SECTION */
@@ -251,7 +252,7 @@ body::before {
 /* TRUSTED BY */
 .trusted-section {
   position: absolute;
-  bottom: 40px;
+  bottom: 80px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -265,14 +266,54 @@ body::before {
   margin-bottom: 20px;
 }
 
-.trusted-logos {
-  display: flex;
-  gap: 40px;
-  filter: grayscale(100%) opacity(50%);
+/* LOGO CLOUD 4 (SHADCN MARQUEE EQUIVALENT) */
+.logo-cloud-wrapper {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.trusted-logos img {
-  height: 24px;
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 0;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  min-width: 100%;
+  gap: 0;
+  animation: scroll 15s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(100%) opacity(50%);
+  transition: all 0.3s ease;
+}
+
+.marquee-item:hover {
+  filter: grayscale(0%) opacity(100%);
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {

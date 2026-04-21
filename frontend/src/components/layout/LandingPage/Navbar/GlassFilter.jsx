@@ -3,7 +3,14 @@ import React from 'react';
 export const GlassFilter = () => (
   <svg style={{ display: "none" }}>
     <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
-      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence">
+        <animate 
+          attributeName="baseFrequency" 
+          values="0.001 0.005; 0.003 0.01; 0.001 0.005" 
+          dur="8s" 
+          repeatCount="indefinite" 
+        />
+      </feTurbulence>
       <feComponentTransfer in="turbulence" result="mapped">
         <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
         <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />

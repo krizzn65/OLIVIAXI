@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import './JolyButton.css';
 
-export const JolyButton = ({ children, onClick }) => {
+export const JolyButton = ({ children, onClick, style, className = "" }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -17,7 +17,8 @@ export const JolyButton = ({ children, onClick }) => {
 
   return (
     <motion.button
-      className="joly-button-primary"
+      className={`joly-button-primary ${className}`}
+      style={style}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
