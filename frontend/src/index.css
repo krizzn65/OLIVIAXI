@@ -229,7 +229,6 @@ body::before {
 /* ABSTRACT SHAPES (Css Placeholder gradients) */
 .hiasan-bg {
   position: absolute;
-  top: 50%;
   width: 450px;
   height: auto;
   z-index: 0;
@@ -239,12 +238,12 @@ body::before {
 
 .shape-left {
   left: -320px;
-  transform: translateY(-50%);
+  top: 10%;
 }
 
 .shape-right {
   right: -320px;
-  transform: translateY(-50%);
+  top: 25%;
 }
 
 /* TRUSTED BY */

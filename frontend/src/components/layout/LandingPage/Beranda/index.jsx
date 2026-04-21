@@ -1,16 +1,34 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import LogoCloud from '../../../ui/LogoCloud';
 import { JolyButton } from '../Navbar/JolyButton/JolyButton';
 import hiasanBG from '../../../../assets/Hiasan_BG.png';
 import hiasanBG2 from '../../../../assets/Hiasan_BG2.png';
 
 const Hero = ({ backendMessage }) => {
+  const { scrollY } = useScroll();
+  // Map scroll position to rotation and vertical parallax
+  const rotateLeft = useTransform(scrollY, [0, 1000], [0, 120]);
+  const rotateRight = useTransform(scrollY, [0, 1000], [0, -120]);
+  const yLeft = useTransform(scrollY, [0, 1000], [0, -150]);
+  const yRight = useTransform(scrollY, [0, 1000], [0, -200]);
+
   return (
     <section id="hero" className="hero">
-      {/* 3D Abstract background shapes */}
-      <img src={hiasanBG} alt="" className="hiasan-bg shape-left" />
-      <img src={hiasanBG2} alt="" className="hiasan-bg shape-right" />
+      {/* 3D Abstract background shapes with parallax rotation */}
+      <motion.img 
+        src={hiasanBG} 
+        alt="" 
+        className="hiasan-bg shape-left" 
+        style={{ rotate: rotateLeft, y: yLeft }}
+      />
+      <motion.img 
+        src={hiasanBG2} 
+        alt="" 
+        className="hiasan-bg shape-right" 
+        style={{ rotate: rotateRight, y: yRight }}
+      />
 
       <div className="hero-content">
         <div className="badge">Sirkula Platform</div>
