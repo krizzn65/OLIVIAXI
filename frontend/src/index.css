@@ -322,3 +322,25 @@ body::before {
     display: none;
   }
 }
+
+/* Liquid Scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(16, 185, 129, 0.1); /* Jelas terlihat (soft green tint) */
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color, #34d399);
+  background-image: linear-gradient(180deg, #10b981 0%, #34d399 100%);
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.9); /* Pill effect shape padding */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(180deg, #34d399 0%, #10b981 100%);
+}

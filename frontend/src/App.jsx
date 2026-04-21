@@ -3,6 +3,7 @@ import Navbar from './components/layout/LandingPage/Navbar'
 import LandingPage from './pages/LandingPage'
 import LiquidLoading from './components/ui/LiquidLoader/LiquidLoader'
 import { motion, AnimatePresence } from 'framer-motion'
+import CustomCursor from './components/ui/CustomCursor'
 import './index.css'
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
   }, []);
 
   return (
-    <AnimatePresence mode="wait">
+    <>
+      <CustomCursor />
+      <AnimatePresence mode="wait">
       {dataLoaded ? (
         <motion.div
            key="content"
@@ -49,6 +52,7 @@ function App() {
         </motion.div>
       ) : null}
     </AnimatePresence>
+    </>
   )
 }
 
