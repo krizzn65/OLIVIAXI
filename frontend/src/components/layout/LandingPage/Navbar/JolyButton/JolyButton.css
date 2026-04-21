@@ -1,0 +1,34 @@
+.joly-button-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 14px 28px;
+  color: #111;
+  background: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(211, 251, 82, 0.4); /* Glow shadow based on lime */
+  outline: none;
+}
+
+.joly-button-glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.joly-button-text {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
