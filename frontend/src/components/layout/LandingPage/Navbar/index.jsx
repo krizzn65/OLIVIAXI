@@ -5,6 +5,12 @@ import { JolyButton } from './JolyButton/JolyButton';
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const scrollTo = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const glassStyle = {
     position: 'relative',
     display: 'flex',
@@ -50,13 +56,14 @@ const Navbar = () => {
               Sirkula
             </div>
             <div className="nav-links">
-              <a href="#about">Tentang</a>
-              <a href="#features">Fitur</a>
-              <a href="#impact">Dampak ESG</a>
-              <a href="#faq">FAQ</a>
+              <a href="#hero" onClick={(e) => scrollTo(e, 'hero')}>Beranda</a>
+              <a href="#masalah" onClick={(e) => scrollTo(e, 'masalah')}>Masalah</a>
+              <a href="#solusi" onClick={(e) => scrollTo(e, 'solusi')}>Solusi</a>
+              <a href="#fitur" onClick={(e) => scrollTo(e, 'fitur')}>Fitur</a>
+              <a href="#faq" onClick={(e) => scrollTo(e, 'faq')}>FAQ</a>
             </div>
             <JolyButton>
-              Daftar Dapur
+              Daftar
             </JolyButton>
           </nav>
         </div>

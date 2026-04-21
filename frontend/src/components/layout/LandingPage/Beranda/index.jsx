@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = ({ backendMessage }) => {
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       {/* Abstract shape placeholders (pure CSS gradients) */}
       <div className="shape-left"></div>
       <div className="shape-right"></div>
