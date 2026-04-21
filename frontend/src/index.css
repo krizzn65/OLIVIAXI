@@ -58,29 +58,37 @@ body::before {
    =============================== */
 .ambient-blob {
   position: absolute;
-  top: -50px;
+  top: -80px;
   border-radius: 50%;
-  filter: blur(40px);
+  filter: blur(60px);
   z-index: -1;
   opacity: 0.6;
-  animation: floatBlobs 8s ease-in-out infinite alternate;
 }
 .blob-1 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, #e9ff8a, #4ade80);
-  left: 20%;
+  left: 10%;
+  animation: blob-drift-1 12s ease-in-out infinite alternate;
 }
 .blob-2 {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   background: radial-gradient(circle, #60a5fa, #a78bfa);
-  right: 20%;
-  animation-delay: -4s;
+  right: 10%;
+  animation: blob-drift-2 15s ease-in-out infinite alternate;
 }
-@keyframes floatBlobs {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(40px) scale(1.1); }
+
+@keyframes blob-drift-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15vw, 60px) scale(1.1); }
+  100% { transform: translate(-5vw, 10px) scale(0.95); }
+}
+
+@keyframes blob-drift-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-15vw, 40px) scale(1.15); }
+  100% { transform: translate(5vw, 70px) scale(0.9); }
 }
 
 
