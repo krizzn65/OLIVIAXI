@@ -2,13 +2,15 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import LogoCloud from '../../../ui/LogoCloud';
 import { JolyButton } from '../Navbar/JolyButton/JolyButton';
+import hiasanBG from '../../../../assets/Hiasan_BG.png';
+import hiasanBG2 from '../../../../assets/Hiasan_BG2.png';
 
 const Hero = ({ backendMessage }) => {
   return (
     <section id="hero" className="hero">
-      {/* Abstract shape placeholders (pure CSS gradients) */}
-      <div className="shape-left"></div>
-      <div className="shape-right"></div>
+      {/* 3D Abstract background shapes */}
+      <img src={hiasanBG} alt="" className="hiasan-bg shape-left" />
+      <img src={hiasanBG2} alt="" className="hiasan-bg shape-right" />
 
       <div className="hero-content">
         <div className="badge">Sirkula Platform</div>
